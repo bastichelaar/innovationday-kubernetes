@@ -1,3 +1,11 @@
+Innovation Day Kubernetes track
+===============================
+
+This a modified Vagrant setup for 1 Kubernetes API server and 2 nodes. 
+
+Original readme
+---------------
+
 # CoreOS Vagrant
 
 This repo provides a template Vagrantfile to create a CoreOS virtual machine using the VirtualBox software hypervisor.
