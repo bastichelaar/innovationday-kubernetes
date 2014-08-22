@@ -1,13 +1,13 @@
 #cloud-config
 
-hostname: node1
+hostname: node2
 coreos:
   etcd:
-    name: node1
-    addr: 10.10.1.117:4001
+    name: node2
+    addr: 10.10.1.118:4001
     bind-addr: 0.0.0.0
-    peer-addr: 10.10.1.117:7001
-    peers: 10.10.1.118:7001,10.10.1.124:7001
+    peer-addr: 10.10.1.118:7001
+    peers: 10.10.1.117:7001,10.10.1.124:7001
     peer-heartbeat-interval: 250
     peer-election-timeout: 1000
   units:
@@ -24,7 +24,7 @@ coreos:
         Name=cbr0
 
         [Network]
-        Address=10.244.1.1/24
+        Address=10.244.2.1/24
 
         [Route]
         Destination=10.15.0.0/16
@@ -95,7 +95,7 @@ coreos:
         ExecStart=/opt/bin/kubelet \
         --address=0.0.0.0 \
         --port=10250 \
-        --hostname_override=10.10.1.117 \
+        --hostname_override=10.10.1.118 \
         --etcd_servers=http://127.0.0.1:4001 \
         --logtostderr=true
         Restart=always
