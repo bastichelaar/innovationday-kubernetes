@@ -4,9 +4,9 @@ hostname: master
 coreos:
   etcd:
     name: master
-    addr: $public_ipv4:4001
+    addr: $COREOS_PUBLIC_IPV4:4001
     bind-addr: 0.0.0.0
-    peer-addr: $public_ipv4:7001
+    peer-addr: $COREOS_PUBLIC_IPV4:7001
     peer-heartbeat-interval: 250
     peer-election-timeout: 1000
   units:
@@ -103,7 +103,7 @@ coreos:
         --address=127.0.0.1 \
         --port=8080 \
         --etcd_servers=http://127.0.0.1:4001 \
-        --machines=$public_ipv4 \
+        --machines=$COREOS_PUBLIC_IPV4 \
         --logtostderr=true
         Restart=always
         RestartSec=2
@@ -139,7 +139,7 @@ coreos:
         ExecStart=/opt/bin/kubelet \
         --address=0.0.0.0 \
         --port=10250 \
-        --hostname_override=$public_ipv4 \
+        --hostname_override=$COREOS_PUBLIC_IPV4 \
         --etcd_servers=http://127.0.0.1:4001 \
         --logtostderr=true
         Restart=always
