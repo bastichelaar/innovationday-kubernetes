@@ -176,9 +176,9 @@ coreos:
         Requires=network-online.target
 
         [Service]
-        ExecStart=/usr/bin/wget -N -P /usr/local/bin http://s3.amazonaws.com/ec2metadata/ec2-metadata
-        
-        ExecStart=/usr/bin/chmod +x /usr/local/bin/ec2-metadata
+        ExecStart=/usr/bin/wget -N -P /usr/local/bin/fix_network.sh https://raw.githubusercontent.com/bastichelaar/innovationday-kubernetes/master/openstack/scripts/fix_network.sh
+        ExecStart=/usr/bin/chmod +x /usr/local/bin/fix_network.sh
+        ExecStart=/usr/local/bin/fix_network.sh
         RemainAfterExit=yes
         Type=oneshot
   update:
