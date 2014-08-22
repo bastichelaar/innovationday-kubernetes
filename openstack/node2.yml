@@ -27,13 +27,13 @@ coreos:
         Address=10.244.2.1/24
 
         [Route]
-        Destination=10.15.0.0/16
+        Destination=10.0.0.0/8
         Gateway=0.0.0.0
     - name: cbr0-interface.network
       command: start
       content: |
         [Match]
-        Name=ens34
+        Name=ens3
 
         [Network]
         Bridge=cbr0
@@ -44,7 +44,7 @@ coreos:
         Description=NAT non container traffic
 
         [Service]
-        ExecStart=/usr/sbin/iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE ! -d 10.15.0.0/16
+        ExecStart=/usr/sbin/iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE ! -d 10.0.0.0/8
         RemainAfterExit=yes
         Type=oneshot
     - name: etcd.service

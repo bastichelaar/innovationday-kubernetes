@@ -32,7 +32,7 @@ coreos:
       command: start
       content: |
         [Match]
-        Name=ens34
+        Name=enp0s9
 
         [Network]
         Bridge=cbr0

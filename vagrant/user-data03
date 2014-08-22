@@ -11,16 +11,6 @@ coreos:
     peer-heartbeat-interval: 250
     peer-election-timeout: 1000
   units:
-    - name: static.network
-      command: start
-      content: |
-        [Match]
-        Name=ens33
-
-        [Network]
-        Address=172.17.8.103/24
-        DNS=192.168.12.2
-        Gateway=192.168.12.2
     - name: cbr0.netdev
       command: start
       content: |
@@ -43,7 +33,7 @@ coreos:
       command: start
       content: |
         [Match]
-        Name=ens34
+        Name=enp0s9
 
         [Network]
         Bridge=cbr0
@@ -54,7 +44,7 @@ coreos:
         Description=NAT non container traffic
 
         [Service]
-        ExecStart=/usr/sbin/iptables -t nat -A POSTROUTING -o ens33 -j MASQUERADE ! -d 10.0.0.0/8
+        ExecStart=/usr/sbin/iptables -t nat -A POSTROUTING -o enp0s8 -j MASQUERADE ! -d 10.0.0.0/8
         RemainAfterExit=yes
         Type=oneshot
     - name: etcd.service
