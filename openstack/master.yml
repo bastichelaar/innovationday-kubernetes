@@ -166,4 +166,4 @@ coreos:
     group: alpha
     reboot-strategy: off
 ssh_authorized_keys:
-    - <pubkey>
+    - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAm80GBFOjGxDBhPvV/U7V22oBxM7eyF3YTJYJpL/Q6Vh6Q+m5G851tGOZIST4bDP1cS9HydSwPLIYbM+OfQL/IFYnR8Dm5IvxxesYy8s5FnV0+pd04xKo4vADDLvuE0e4yMOTpT0IhQ0xdPAAQD8ISemLXXoekAoZh0yITiHjtmhYtP7NHCKBXNBFNr/mG2+RABNeJDpkb7sRu4nN2eQ4MXqbbCnwSIitPQsjCcezb0MmFigfFWtfJCHAen/Ikf5UkXHuaLgkEWRhZULDSZAJAjLov5Zqppqn2sr6uIKAEC34BQ8BnBO0DvHlsj6NmuQjJZQSC2fBN1xBSbPHMfMqSw==
